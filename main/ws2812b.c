@@ -7,6 +7,10 @@
 
 #define TAG "example"
 
+// Teste on WS2812b only
+#define GPIO_TEST 18
+#define TOTAL_PIXELS 30
+
 
 void app_main(void *arg)
 {
@@ -16,7 +20,7 @@ void app_main(void *arg)
         .hw = {
             .channel = 0,
             .clk_div = 4,
-            .gpio_num = 18,
+            .gpio_num = GPIO_TEST,
             .tx_config = {
                 .carrier_en = false,
                 .loop_en = false,
@@ -29,7 +33,7 @@ void app_main(void *arg)
             .t1l_ns = 450,
             .treset_us = 55,
         },
-        .total_pixels = 30,
+        .total_pixels = TOTAL_PIXELS,
         .bits_per_pixel = 24,
     };
 
